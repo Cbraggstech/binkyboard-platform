@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckSquare, Plus, Trophy, Star, Clock, Users, ThumbsUp, ThumbsDown, Gift, Zap, Target, Award } from 'lucide-react';
-import { Task, Reward, Child } from '../../types';
+import type { Child, Reward, Task } from '../../types';
 
 export const EnhancedChoreRewardSystem: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'chores' | 'rewards' | 'store' | 'approval'>('chores');

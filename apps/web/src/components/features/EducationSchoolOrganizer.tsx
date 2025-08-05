@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GraduationCap, Plus, Calendar, BookOpen, Users, FileText, Phone, Mail, Clock, AlertCircle, CheckCircle, Star } from 'lucide-react';
-import { Assignment, SchoolContact, SchoolDocument, Child, ClassPeriod } from '../../types';
+import type { Assignment, SchoolContact, SchoolDocument, Child, ClassPeriod } from '../../types';
 
 export const EducationSchoolOrganizer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'assignments' | 'schedule' | 'contacts' | 'documents'>('overview');

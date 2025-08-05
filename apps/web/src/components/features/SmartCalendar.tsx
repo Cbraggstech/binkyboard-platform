@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Calendar, Plus, Clock, MapPin, Users, Repeat, Bell, ChevronLeft, ChevronRight, Filter, Settings, Download, RefreshCw, Link } from 'lucide-react';
-import { CalendarEvent } from '../../types';
+import type { CalendarEvent } from '../../types';
 
 export const SmartCalendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());

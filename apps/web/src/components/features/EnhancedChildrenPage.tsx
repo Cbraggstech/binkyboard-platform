@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Plus, Edit, Trophy, Calendar, Heart, Camera, Phone, Shield, GraduationCap, Activity } from 'lucide-react';
-import { Child } from '../../types';
+import type { Child } from '../../types';
 
 export const EnhancedChildrenPage: React.FC = () => {
   const [children] = useState<Child[]>([

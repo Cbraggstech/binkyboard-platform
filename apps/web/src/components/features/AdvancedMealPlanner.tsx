@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { UtensilsCrossed, Plus, ShoppingCart, Clock, Users, Zap, Shield, Target, ChefHat, BookOpen } from 'lucide-react';
-import { Meal, Ingredient, NutritionInfo, GroceryList, Child } from '../../types';
+import type { Child, GroceryList, Ingredient, Meal, NutritionInfo } from '../../types';
 
 export const AdvancedMealPlanner: React.FC = () => {
   const [activeWeek, setActiveWeek] = useState(new Date());

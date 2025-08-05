@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Activity, Plus, Calendar, Pill, TrendingUp, FileText, Phone, Shield, Heart, Ruler, Weight } from 'lucide-react';
-import { HealthRecord, Vaccination, GrowthRecord, Appointment, Medication, Child } from '../../types';
+import type { HealthRecord, Vaccination, GrowthRecord, Appointment, Medication, Child } from '../../types';
 
 export const HealthWellnessTracker: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'vaccines' | 'growth' | 'appointments' | 'medications' | 'symptoms'>('overview');
