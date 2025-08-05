@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-primary/10 via-light to-accent/20 font-sans;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-xl;
+  }
+  
+  .glassmorphism-dark {
+    @apply bg-dark/20 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white font-medium px-6 py-3 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary/80 hover:from-secondary/90 hover:to-secondary/70 text-white font-medium px-6 py-3 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105;
+  }
+
+  .card {
+    @apply glassmorphism rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:bg-white/30;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200;
+  }
+}

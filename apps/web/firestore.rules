@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can only access their own user document
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Children documents - only accessible by the parent
+    match /children/{childId} {
+      allow read, write: if request.auth != null && 
+        resource.data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.parentId == request.auth.uid;
+    }
+
+    // Tasks - only accessible by the parent who created them
+    match /tasks/{taskId} {
+      allow read, write: if request.auth != null && 
+        (resource.data.parentId == request.auth.uid ||
+         get(/databases/$(database)/documents/children/$(resource.data.childId)).data.parentId == request.auth.uid);
+      allow create: if request.auth != null && 
+        get(/databases/$(database)/documents/children/$(request.resource.data.childId)).data.parentId == request.auth.uid;
+    }
+
+    // Meals - accessible by family members
+    match /meals/{mealId} {
+      allow read, write: if request.auth != null && 
+        resource.data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.parentId == request.auth.uid;
+    }
+
+    // Moods - accessible by family members
+    match /moods/{moodId} {
+      allow read, write: if request.auth != null && 
+        get(/databases/$(database)/documents/children/$(resource.data.childId)).data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        get(/databases/$(database)/documents/children/$(request.resource.data.childId)).data.parentId == request.auth.uid;
+    }
+
+    // Journal entries - accessible by family members
+    match /journals/{journalId} {
+      allow read, write: if request.auth != null && 
+        resource.data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.parentId == request.auth.uid;
+    }
+
+    // Rewards - accessible by family members
+    match /rewards/{rewardId} {
+      allow read, write: if request.auth != null && 
+        get(/databases/$(database)/documents/children/$(resource.data.childId)).data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        get(/databases/$(database)/documents/children/$(request.resource.data.childId)).data.parentId == request.auth.uid;
+    }
+
+    // Calendar events - accessible by family members
+    match /events/{eventId} {
+      allow read, write: if request.auth != null && 
+        resource.data.parentId == request.auth.uid;
+      allow create: if request.auth != null && 
+        request.resource.data.parentId == request.auth.uid;
+    }
+
+    // Settings - only accessible by the user
+    match /settings/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
