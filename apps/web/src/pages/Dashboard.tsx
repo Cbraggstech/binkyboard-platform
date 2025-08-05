@@ -24,6 +24,7 @@ import { EducationSchoolOrganizer } from '../components/features/EducationSchool
 export const Dashboard: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeChild, setActiveChild] = useState('family');
 
   const renderContent = () => {
     switch (activeTab) {
@@ -63,14 +64,17 @@ export const Dashboard: React.FC = () => {
       <Sidebar
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
+        onOpen={() => setIsSidebarOpen(true)}
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />
       
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1 min-h-screen">
         <Header
           onMenuToggle={() => setIsSidebarOpen(!isSidebarOpen)}
           isMenuOpen={isSidebarOpen}
+          activeChild={activeChild}
+          onChildChange={setActiveChild}
         />
         
         <main className="p-4 lg:p-6">
