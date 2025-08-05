@@ -55,7 +55,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
 
       {/* Sidebar - Always takes space in layout */}
       <aside className={`transition-all duration-300 h-screen glassmorphism border-r border-white/20 flex-shrink-0 ${
-        isOpen ? 'w-64' : 'w-16'
+        isOpen ? 'w-80' : 'w-16'
       }`}>
         <div className="h-full overflow-y-auto overflow-x-hidden">
           {!isOpen ? (
