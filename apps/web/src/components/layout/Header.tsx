@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">B</span>
             </div>
-            <h1 className="text-xl font-bold text-dark dark:text-slate-100">BinkyBoard</h1>
+            <h1 className="text-xl font-bold text-dark dark:text-white">BinkyBoard</h1>
           </div>
         </div>
 
@@ -64,10 +64,10 @@ export const Header: React.FC<HeaderProps> = ({
                 {children.find(c => c.id === activeChild)?.emoji}
               </span>
             </div>
-            <span className="text-dark dark:text-slate-100 font-medium">
+            <span className="text-dark dark:text-white font-medium">
               {children.find(c => c.id === activeChild)?.name}
             </span>
-            <ChevronDown size={16} className="text-dark/60 dark:text-slate-400" />
+            <ChevronDown size={16} className="text-dark/60 dark:text-gray-200" />
           </button>
 
           {isChildMenuOpen && (
@@ -91,9 +91,9 @@ export const Header: React.FC<HeaderProps> = ({
                     <span className="text-white text-sm font-bold">{child.emoji}</span>
                   </div>
                   <div className="flex-1">
-                    <span className="text-dark dark:text-slate-200 font-medium block">{child.name}</span>
+                    <span className="text-dark dark:text-white font-medium block">{child.name}</span>
                     {child.id !== 'family' && (
-                      <span className="text-dark/60 text-xs">
+                      <span className="text-dark/60 dark:text-gray-300 text-xs">
                         {child.id === 'emma' ? '3 pending • 245 pts' : 
                          child.id === 'liam' ? '1 overdue • 189 pts' : 
                          'All done! • 312 pts'}
@@ -153,9 +153,9 @@ export const Header: React.FC<HeaderProps> = ({
                       <span className="text-white text-sm font-bold">{child.emoji}</span>
                     </div>
                     <div className="flex-1">
-                      <span className="text-dark dark:text-slate-200 font-medium block">{child.name}</span>
+                      <span className="text-dark dark:text-white font-medium block">{child.name}</span>
                       {child.id !== 'family' && (
-                        <span className="text-dark/60 text-xs">
+                        <span className="text-dark/60 dark:text-gray-300 text-xs">
                           {child.id === 'emma' ? '3 pending • 245 pts' : 
                            child.id === 'liam' ? '1 overdue • 189 pts' : 
                            'All done! • 312 pts'}
@@ -178,7 +178,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100"
+            className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-white hover:text-dark dark:hover:text-white"
             title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
             {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
@@ -194,20 +194,20 @@ export const Header: React.FC<HeaderProps> = ({
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <User size={16} className="text-white" />
                 </div>
-                <span className="text-dark font-medium hidden sm:block">
+                <span className="text-dark dark:text-white font-medium hidden sm:block">
                   {user.displayName}
                 </span>
               </button>
 
               {isUserMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 glassmorphism rounded-xl shadow-lg py-1 z-[60]">
-                  <button className="flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-white/20 transition-colors">
+                <div className="absolute right-0 mt-2 w-48 glassmorphism dark:bg-slate-800/95 dark:backdrop-blur-xl dark:border-slate-700/50 rounded-xl shadow-lg py-1 z-[60]">
+                  <button className="flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-white/20 dark:hover:bg-slate-700/50 transition-colors text-dark dark:text-white">
                     <Settings size={16} />
                     <span>Settings</span>
                   </button>
                   <button
                     onClick={signOut}
-                    className="flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-white/20 transition-colors text-red-600"
+                    className="flex items-center space-x-2 w-full px-4 py-2 text-left hover:bg-white/20 dark:hover:bg-slate-700/50 transition-colors text-red-600 dark:text-red-400"
                   >
                     <LogOut size={16} />
                     <span>Sign Out</span>

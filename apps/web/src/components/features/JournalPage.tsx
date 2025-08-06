@@ -39,8 +39,8 @@ export const JournalPage: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Family Journal</h1>
-          <p className="text-dark/70">Capture and preserve your family's precious moments</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Family Journal</h1>
+          <p className="text-dark/70 dark:text-gray-300">Capture and preserve your family's precious moments</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -77,19 +77,19 @@ export const JournalPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
-                    <h3 className="text-lg font-semibold text-dark">{entry.title}</h3>
+                    <h3 className="text-lg font-semibold text-dark dark:text-white">{entry.title}</h3>
                     {entry.milestone && (
                       <Star size={16} className="text-warning fill-current" />
                     )}
                   </div>
-                  <p className="text-sm text-dark/60">
+                  <p className="text-sm text-dark/60 dark:text-gray-300">
                     {entry.date} {entry.child && `• ${entry.child}`}
                   </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 {entry.photos.length > 0 && (
-                  <div className="flex items-center space-x-1 text-sm text-dark/60">
+                  <div className="flex items-center space-x-1 text-sm text-dark/60 dark:text-gray-300">
                     <Camera size={14} />
                     <span>{entry.photos.length}</span>
                   </div>
@@ -97,7 +97,7 @@ export const JournalPage: React.FC = () => {
               </div>
             </div>
             
-            <p className="text-dark mb-4">{entry.content}</p>
+            <p className="text-dark dark:text-white mb-4">{entry.content}</p>
             
             {/* Photo Thumbnails */}
             {entry.photos.length > 0 && (
@@ -127,8 +127,8 @@ export const JournalPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">{entries.length}</p>
-              <p className="text-dark/70 text-sm">Total Entries</p>
+              <p className="text-2xl font-bold text-dark dark:text-white">{entries.length}</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Total Entries</p>
             </div>
             <BookOpen className="text-primary" size={24} />
           </div>
@@ -136,8 +136,8 @@ export const JournalPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">{entries.filter(e => e.milestone).length}</p>
-              <p className="text-dark/70 text-sm">Milestones</p>
+              <p className="text-2xl font-bold text-dark dark:text-white">{entries.filter(e => e.milestone).length}</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Milestones</p>
             </div>
             <Star className="text-warning" size={24} />
           </div>
@@ -145,8 +145,8 @@ export const JournalPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">{entries.reduce((sum, e) => sum + e.photos.length, 0)}</p>
-              <p className="text-dark/70 text-sm">Photos</p>
+              <p className="text-2xl font-bold text-dark dark:text-white">{entries.reduce((sum, e) => sum + e.photos.length, 0)}</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Photos</p>
             </div>
             <Camera className="text-secondary" size={24} />
           </div>

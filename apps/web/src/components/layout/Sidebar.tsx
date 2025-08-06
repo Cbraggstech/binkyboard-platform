@@ -65,7 +65,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
               <div className="mb-4">
                 <button
                   onClick={onOpen}
-                  className="flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100 group"
+                  className="flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-white hover:text-dark dark:hover:text-white group"
                   title="Open Navigation"
                 >
                   <Menu size={20} />
@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                       className={`flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 group relative ${
                         activeTab === item.id
                           ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/30'
-                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100'
+                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-white hover:text-dark dark:hover:text-white'
                       }`}
                       title={item.label}
                     >
@@ -107,10 +107,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
             <div className="p-6">
               {/* Close Button */}
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-bold text-dark dark:text-slate-100">Navigation</h2>
+                <h2 className="text-lg font-bold text-dark dark:text-white">Navigation</h2>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100"
+                  className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-white hover:text-dark dark:hover:text-white"
                 >
                   <ChevronRight size={20} className="rotate-180" />
                 </button>
@@ -129,7 +129,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                       className={`flex items-center space-x-3 w-full px-4 py-3 rounded-xl text-left transition-all duration-200 ${
                         activeTab === item.id
                           ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/30'
-                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100'
+                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-white hover:text-dark dark:hover:text-white'
                       }`}
                     >
                       <Icon size={20} className="flex-shrink-0" />
@@ -149,8 +149,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                         <span className="text-white text-lg font-bold">🏠</span>
                       </div>
                       <div>
-                        <h3 className="text-base font-bold text-dark dark:text-slate-100">Family Hub</h3>
-                        <p className="text-xs text-dark/60 dark:text-slate-400">Currently viewing all members</p>
+                        <h3 className="text-base font-bold text-dark dark:text-white">Family Hub</h3>
+                        <p className="text-xs text-dark/60 dark:text-gray-300">Currently viewing all members</p>
                       </div>
                     </div>
                     <button className="text-xs text-primary dark:text-primary-light hover:text-primary/80 transition-colors font-semibold bg-primary/10 dark:bg-primary/20 px-3 py-1.5 rounded-lg">
@@ -164,31 +164,31 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                   <div className="grid grid-cols-3 gap-3 mb-4">
                     <div className="text-center">
                       <div className="text-lg font-bold text-primary">4</div>
-                      <div className="text-xs text-dark/60">Total Tasks</div>
+                      <div className="text-xs text-dark/60 dark:text-gray-300">Total Tasks</div>
                     </div>
                     <div className="text-center border-l border-r border-white/20">
                       <div className="text-lg font-bold text-green-600">746</div>
-                      <div className="text-xs text-dark/60">Total Points</div>
+                      <div className="text-xs text-dark/60 dark:text-gray-300">Total Points</div>
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-orange-500">1</div>
-                      <div className="text-xs text-dark/60">Overdue</div>
+                      <div className="text-xs text-dark/60 dark:text-gray-300">Overdue</div>
                     </div>
                   </div>
 
                   {/* Member Quick View */}
                   <div className="space-y-2">
-                    <h4 className="text-xs font-semibold text-dark/70 uppercase tracking-wide mb-2">Members</h4>
+                    <h4 className="text-xs font-semibold text-dark/70 dark:text-gray-300 uppercase tracking-wide mb-2">Members</h4>
                     
                     <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 dark:bg-slate-800/30 hover:bg-white/10 dark:hover:bg-slate-700/40 transition-colors">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">E</span>
                         </div>
-                        <span className="text-sm font-medium text-dark dark:text-slate-200">Emma</span>
+                        <span className="text-sm font-medium text-dark dark:text-white">Emma</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60 dark:text-slate-400">245 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-gray-300">245 pts</span>
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       </div>
                     </div>
@@ -198,10 +198,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                         <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">L</span>
                         </div>
-                        <span className="text-sm font-medium text-dark dark:text-slate-200">Liam</span>
+                        <span className="text-sm font-medium text-dark dark:text-white">Liam</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60 dark:text-slate-400">189 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-gray-300">189 pts</span>
                         <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
                       </div>
                     </div>
@@ -211,10 +211,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                         <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">S</span>
                         </div>
-                        <span className="text-sm font-medium text-dark dark:text-slate-200">Sophie</span>
+                        <span className="text-sm font-medium text-dark dark:text-white">Sophie</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60 dark:text-slate-400">312 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-gray-300">312 pts</span>
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       </div>
                     </div>

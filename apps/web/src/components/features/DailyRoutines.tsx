@@ -81,8 +81,8 @@ export const DailyRoutines: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Daily Routines</h1>
-          <p className="text-dark/70">Build healthy habits with structured daily routines</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Daily Routines</h1>
+          <p className="text-dark/70 dark:text-gray-300">Build healthy habits with structured daily routines</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -97,8 +97,8 @@ export const DailyRoutines: React.FC = () => {
             <div className="w-16 h-16 bg-warning/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock size={24} className="text-warning" />
             </div>
-            <h3 className="font-semibold text-dark mb-2">Morning Routine</h3>
-            <p className="text-dark/70 text-sm">Start the day right</p>
+            <h3 className="font-semibold text-dark dark:text-white mb-2">Morning Routine</h3>
+            <p className="text-dark/70 dark:text-gray-300 text-sm">Start the day right</p>
           </div>
         </div>
         
@@ -107,8 +107,8 @@ export const DailyRoutines: React.FC = () => {
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock size={24} className="text-purple-600" />
             </div>
-            <h3 className="font-semibold text-dark mb-2">Bedtime Routine</h3>
-            <p className="text-dark/70 text-sm">Wind down peacefully</p>
+            <h3 className="font-semibold text-dark dark:text-white mb-2">Bedtime Routine</h3>
+            <p className="text-dark/70 dark:text-gray-300 text-sm">Wind down peacefully</p>
           </div>
         </div>
         
@@ -117,15 +117,15 @@ export const DailyRoutines: React.FC = () => {
             <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Plus size={24} className="text-accent" />
             </div>
-            <h3 className="font-semibold text-dark mb-2">Custom Routine</h3>
-            <p className="text-dark/70 text-sm">Create your own</p>
+            <h3 className="font-semibold text-dark dark:text-white mb-2">Custom Routine</h3>
+            <p className="text-dark/70 dark:text-gray-300 text-sm">Create your own</p>
           </div>
         </div>
       </div>
 
       {/* Active Routines */}
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-dark">Your Routines</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white">Your Routines</h2>
         {routines.map((routine) => (
           <div key={routine.id} className="card">
             <div className="flex items-center justify-between mb-4">
@@ -135,12 +135,12 @@ export const DailyRoutines: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
-                    <h3 className="font-semibold text-dark">{routine.name}</h3>
+                    <h3 className="font-semibold text-dark dark:text-white">{routine.name}</h3>
                     <span className={`px-2 py-1 rounded-lg text-xs font-medium ${getTypeColor(routine.type)}`}>
                       {routine.type}
                     </span>
                   </div>
-                  <p className="text-sm text-dark/60">
+                  <p className="text-sm text-dark/60 dark:text-gray-300">
                     {routine.items.length} steps • {getTotalDuration(routine)} minutes
                   </p>
                 </div>
@@ -148,7 +148,7 @@ export const DailyRoutines: React.FC = () => {
               
               <div className="flex items-center space-x-3">
                 <div className="text-right">
-                  <p className="text-sm font-medium text-dark">{getRoutineProgress(routine)}%</p>
+                  <p className="text-sm font-medium text-dark dark:text-white">{getRoutineProgress(routine)}%</p>
                   <div className="w-20 bg-white/20 rounded-full h-2">
                     <div 
                       className="bg-primary h-2 rounded-full transition-all duration-300"
@@ -189,7 +189,7 @@ export const DailyRoutines: React.FC = () => {
                   }`}
                 >
                   <button className="cursor-grab">
-                    <GripVertical size={16} className="text-dark/40" />
+                    <GripVertical size={16} className="text-dark/40 dark:text-gray-400" />
                   </button>
                   
                   <div className="flex items-center space-x-2">
@@ -206,12 +206,12 @@ export const DailyRoutines: React.FC = () => {
                         </svg>
                       )}
                     </button>
-                    <span className={`font-medium ${item.completed ? 'line-through text-dark/60' : 'text-dark'}`}>
+                    <span className={`font-medium ${item.completed ? 'line-through text-dark/60 dark:text-gray-300' : 'text-dark dark:text-white'}`}>
                       {item.title}
                     </span>
                   </div>
                   
-                  <div className="ml-auto text-sm text-dark/60">
+                  <div className="ml-auto text-sm text-dark/60 dark:text-gray-300">
                     {item.duration} min
                   </div>
                 </div>
@@ -222,10 +222,10 @@ export const DailyRoutines: React.FC = () => {
               <div className="mt-4 p-4 bg-primary/10 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium text-dark">
+                    <p className="font-medium text-dark dark:text-white">
                       Step {currentStep + 1}: {routine.items[currentStep]?.title}
                     </p>
-                    <p className="text-sm text-dark/70">
+                    <p className="text-sm text-dark/70 dark:text-gray-300">
                       {routine.items[currentStep]?.duration} minutes
                     </p>
                   </div>

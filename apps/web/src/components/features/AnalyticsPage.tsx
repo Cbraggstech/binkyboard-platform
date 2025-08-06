@@ -36,8 +36,8 @@ export const AnalyticsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-dark">Analytics & Insights</h1>
-        <p className="text-dark/70">Track progress and discover patterns in your family's activities</p>
+        <h1 className="text-3xl font-bold text-dark dark:text-white">Analytics & Insights</h1>
+        <p className="text-dark/70 dark:text-gray-300">Track progress and discover patterns in your family's activities</p>
       </div>
 
       {/* Key Metrics */}
@@ -49,8 +49,8 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <TrendingUp size={16} className="text-green-500" />
           </div>
-          <p className="text-2xl font-bold text-dark">78%</p>
-          <p className="text-dark/70 text-sm">Task Completion Rate</p>
+          <p className="text-2xl font-bold text-dark dark:text-white">78%</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Task Completion Rate</p>
         </div>
         
         <div className="card">
@@ -60,8 +60,8 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <TrendingUp size={16} className="text-green-500" />
           </div>
-          <p className="text-2xl font-bold text-dark">434</p>
-          <p className="text-dark/70 text-sm">Points Earned</p>
+          <p className="text-2xl font-bold text-dark dark:text-white">434</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Points Earned</p>
         </div>
         
         <div className="card">
@@ -69,10 +69,10 @@ export const AnalyticsPage: React.FC = () => {
             <div className="w-10 h-10 bg-warning/20 rounded-xl flex items-center justify-center">
               <Calendar size={20} className="text-warning" />
             </div>
-            <span className="text-sm text-dark/60">+2</span>
+            <span className="text-sm text-dark/60 dark:text-gray-300">+2</span>
           </div>
-          <p className="text-2xl font-bold text-dark">5.2</p>
-          <p className="text-dark/70 text-sm">Avg Daily Tasks</p>
+          <p className="text-2xl font-bold text-dark dark:text-white">5.2</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Avg Daily Tasks</p>
         </div>
         
         <div className="card">
@@ -82,23 +82,23 @@ export const AnalyticsPage: React.FC = () => {
             </div>
             <span className="text-sm text-green-500">Stable</span>
           </div>
-          <p className="text-2xl font-bold text-dark">4.2</p>
-          <p className="text-dark/70 text-sm">Avg Mood Score</p>
+          <p className="text-2xl font-bold text-dark dark:text-white">4.2</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Avg Mood Score</p>
         </div>
       </div>
 
       {/* Weekly Progress Chart */}
       <div className="card">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-dark">Weekly Task Completion</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Weekly Task Completion</h2>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-secondary rounded-full"></div>
-              <span className="text-sm text-dark/70">Emma</span>
+              <span className="text-sm text-dark/70 dark:text-gray-300">Emma</span>
             </div>
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <span className="text-sm text-dark/70">Liam</span>
+              <span className="text-sm text-dark/70 dark:text-gray-300">Liam</span>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ export const AnalyticsPage: React.FC = () => {
                     style={{ height: `${liamHeight}px` }}
                   ></div>
                 </div>
-                <span className="text-xs text-dark/60">{data.day}</span>
+                <span className="text-xs text-dark/60 dark:text-gray-300">{data.day}</span>
               </div>
             );
           })}
@@ -130,7 +130,7 @@ export const AnalyticsPage: React.FC = () => {
 
       {/* Insights */}
       <div>
-        <h2 className="text-xl font-semibold text-dark mb-4">AI-Powered Insights</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">AI-Powered Insights</h2>
         <div className="grid md:grid-cols-3 gap-4">
           {insights.map((insight, i) => {
             const bgColor = {
@@ -142,10 +142,10 @@ export const AnalyticsPage: React.FC = () => {
             return (
               <div key={i} className={`p-4 rounded-xl border ${bgColor} backdrop-blur-sm`}>
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-semibold text-dark">{insight.title}</h3>
+                  <h3 className="font-semibold text-dark dark:text-white">{insight.title}</h3>
                   <span className="text-lg font-bold text-primary">{insight.metric}</span>
                 </div>
-                <p className="text-dark/70 text-sm">{insight.description}</p>
+                <p className="text-dark/70 dark:text-gray-300 text-sm">{insight.description}</p>
               </div>
             );
           })}
@@ -154,16 +154,16 @@ export const AnalyticsPage: React.FC = () => {
 
       {/* Mood Trends */}
       <div className="card">
-        <h2 className="text-xl font-semibold text-dark mb-4">Family Mood Trends</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Family Mood Trends</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-medium text-dark mb-3">Emma's Mood This Week</h3>
+            <h3 className="font-medium text-dark dark:text-white mb-3">Emma's Mood This Week</h3>
             <div className="space-y-2">
               {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => {
                 const moods = ['😊', '😁', '😊', '😐', '😊'];
                 return (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-dark/70">{day}</span>
+                    <span className="text-dark/70 dark:text-gray-300">{day}</span>
                     <span className="text-xl">{moods[i]}</span>
                   </div>
                 );
@@ -172,13 +172,13 @@ export const AnalyticsPage: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="font-medium text-dark mb-3">Liam's Mood This Week</h3>
+            <h3 className="font-medium text-dark dark:text-white mb-3">Liam's Mood This Week</h3>
             <div className="space-y-2">
               {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => {
                 const moods = ['😐', '😊', '😢', '😊', '😁'];
                 return (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-dark/70">{day}</span>
+                    <span className="text-dark/70 dark:text-gray-300">{day}</span>
                     <span className="text-xl">{moods[i]}</span>
                   </div>
                 );

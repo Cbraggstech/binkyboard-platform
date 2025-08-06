@@ -12,8 +12,8 @@ export const CalendarPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Family Calendar</h1>
-          <p className="text-dark/70">Keep track of everyone's schedule</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Family Calendar</h1>
+          <p className="text-dark/70 dark:text-gray-300">Keep track of everyone's schedule</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -24,7 +24,7 @@ export const CalendarPage: React.FC = () => {
       {/* Calendar View */}
       <div className="card">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-dark">August 2024</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">August 2024</h2>
           <div className="flex space-x-2">
             <button className="px-4 py-2 glassmorphism rounded-lg hover:bg-white/30 transition-colors">Day</button>
             <button className="px-4 py-2 glassmorphism rounded-lg hover:bg-white/30 transition-colors">Week</button>
@@ -34,7 +34,7 @@ export const CalendarPage: React.FC = () => {
         
         <div className="grid grid-cols-7 gap-2 mb-4">
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-            <div key={day} className="p-2 text-center font-semibold text-dark/70">{day}</div>
+            <div key={day} className="p-2 text-center font-semibold text-dark/70 dark:text-gray-300">{day}</div>
           ))}
         </div>
         
@@ -50,7 +50,7 @@ export const CalendarPage: React.FC = () => {
               } transition-colors`}>
                 {isCurrentMonth && (
                   <>
-                    <div className="font-medium text-dark mb-1">{day}</div>
+                    <div className="font-medium text-dark dark:text-white mb-1">{day}</div>
                     {hasEvent && (
                       <div className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
                         Event
@@ -66,7 +66,7 @@ export const CalendarPage: React.FC = () => {
 
       {/* Upcoming Events */}
       <div className="card">
-        <h2 className="text-xl font-semibold text-dark mb-4">Upcoming Events</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Upcoming Events</h2>
         <div className="space-y-3">
           {events.map((event) => (
             <div key={event.id} className="flex items-center space-x-3 p-3 bg-white/20 rounded-xl">
@@ -74,10 +74,10 @@ export const CalendarPage: React.FC = () => {
                 <Clock size={16} className="text-secondary" />
               </div>
               <div className="flex-1">
-                <p className="font-medium text-dark">{event.title}</p>
-                <p className="text-sm text-dark/60">{event.child} • {event.time}</p>
+                <p className="font-medium text-dark dark:text-white">{event.title}</p>
+                <p className="text-sm text-dark/60 dark:text-gray-300">{event.child} • {event.time}</p>
               </div>
-              <span className="text-sm text-dark/60">{event.date}</span>
+              <span className="text-sm text-dark/60 dark:text-gray-300">{event.date}</span>
             </div>
           ))}
         </div>

@@ -19,8 +19,8 @@ export const RewardsPage: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Reward System</h1>
-          <p className="text-dark/70">Motivate and celebrate your children's achievements</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Reward System</h1>
+          <p className="text-dark/70 dark:text-gray-300">Motivate and celebrate your children's achievements</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -32,29 +32,29 @@ export const RewardsPage: React.FC = () => {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-dark">Emma's Points</h3>
+            <h3 className="text-lg font-semibold text-dark dark:text-white">Emma's Points</h3>
             <div className="w-12 h-12 bg-gradient-to-r from-secondary to-warning rounded-full flex items-center justify-center">
               <span className="text-white font-bold">E</span>
             </div>
           </div>
           <div className="text-3xl font-bold text-primary mb-2">{pointsEarned.Emma}</div>
-          <p className="text-dark/70">Available points</p>
+          <p className="text-dark/70 dark:text-gray-300">Available points</p>
         </div>
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-dark">Liam's Points</h3>
+            <h3 className="text-lg font-semibold text-dark dark:text-white">Liam's Points</h3>
             <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center">
               <span className="text-white font-bold">L</span>
             </div>
           </div>
           <div className="text-3xl font-bold text-primary mb-2">{pointsEarned.Liam}</div>
-          <p className="text-dark/70">Available points</p>
+          <p className="text-dark/70 dark:text-gray-300">Available points</p>
         </div>
       </div>
 
       {/* Available Rewards */}
       <div>
-        <h2 className="text-xl font-semibold text-dark mb-4">Available Rewards</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Available Rewards</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {rewards.map((reward) => {
             const childPoints = pointsEarned[reward.child as keyof typeof pointsEarned];
@@ -73,14 +73,14 @@ export const RewardsPage: React.FC = () => {
                   </span>
                 </div>
                 
-                <h3 className="font-semibold text-dark mb-2">{reward.title}</h3>
-                <p className="text-dark/70 text-sm mb-4">{reward.description}</p>
+                <h3 className="font-semibold text-dark dark:text-white mb-2">{reward.title}</h3>
+                <p className="text-dark/70 dark:text-gray-300 text-sm mb-4">{reward.description}</p>
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1">
                     <Trophy size={16} className="text-warning" />
-                    <span className="font-semibold text-dark">{reward.pointsCost}</span>
-                    <span className="text-dark/60 text-sm">points</span>
+                    <span className="font-semibold text-dark dark:text-white">{reward.pointsCost}</span>
+                    <span className="text-dark/60 dark:text-gray-300 text-sm">points</span>
                   </div>
                   <button 
                     disabled={!canAfford}
@@ -101,7 +101,7 @@ export const RewardsPage: React.FC = () => {
 
       {/* Recent Redemptions */}
       <div className="card">
-        <h2 className="text-xl font-semibold text-dark mb-4">Recent Redemptions</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Recent Redemptions</h2>
         <div className="space-y-3">
           {recentRedemptions.map((redemption, i) => (
             <div key={i} className="flex items-center space-x-3 p-3 bg-white/20 rounded-xl">
@@ -109,8 +109,8 @@ export const RewardsPage: React.FC = () => {
                 <Star size={16} className="text-warning" />
               </div>
               <div className="flex-1">
-                <p className="font-medium text-dark">{redemption.reward}</p>
-                <p className="text-sm text-dark/60">{redemption.child} • {redemption.date}</p>
+                <p className="font-medium text-dark dark:text-white">{redemption.reward}</p>
+                <p className="text-sm text-dark/60 dark:text-gray-300">{redemption.child} • {redemption.date}</p>
               </div>
             </div>
           ))}

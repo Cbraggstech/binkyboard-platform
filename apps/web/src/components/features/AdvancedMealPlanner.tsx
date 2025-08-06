@@ -287,8 +287,8 @@ export const AdvancedMealPlanner: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Advanced Meal Planner</h1>
-          <p className="text-dark/70">Plan nutritious meals with age-appropriate suggestions</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Advanced Meal Planner</h1>
+          <p className="text-dark/70 dark:text-gray-300">Plan nutritious meals with age-appropriate suggestions</p>
         </div>
         <div className="flex items-center space-x-3">
           <button 
@@ -333,7 +333,7 @@ export const AdvancedMealPlanner: React.FC = () => {
           {/* Age Group Templates */}
           <div className="flex items-center space-x-2">
             <ChefHat size={16} className="text-dark/60" />
-            <span className="text-sm text-dark/70">Quick Templates:</span>
+            <span className="text-sm text-dark/70 dark:text-gray-300">Quick Templates:</span>
             {Object.keys(mealTemplates).map(ageGroup => (
               <button
                 key={ageGroup}
@@ -357,7 +357,7 @@ export const AdvancedMealPlanner: React.FC = () => {
           >
             ←
           </button>
-          <span className="text-lg font-semibold text-dark min-w-48 text-center">
+          <span className="text-lg font-semibold text-dark dark:text-white min-w-48 text-center">
             Week of {activeWeek.toLocaleDateString()}
           </span>
           <button 
@@ -377,12 +377,12 @@ export const AdvancedMealPlanner: React.FC = () => {
         {/* Weekly Meal Plan */}
         <div className="lg:col-span-3">
           <div className="card">
-            <h2 className="text-xl font-semibold text-dark mb-4">Weekly Meal Plan</h2>
+            <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Weekly Meal Plan</h2>
             
             {/* Day Headers */}
             <div className="grid grid-cols-7 gap-2 mb-4">
               {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                <div key={day} className="p-2 text-center font-semibold text-dark/70 border-b border-white/20">
+                <div key={day} className="p-2 text-center font-semibold text-dark/70 dark:text-gray-300 border-b border-white/20">
                   {day}
                 </div>
               ))}
@@ -401,7 +401,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                       isToday ? 'border-primary/50 bg-primary/10' : 'border-white/30 bg-white/10'
                     }`}
                   >
-                    <div className={`font-medium mb-2 ${isToday ? 'text-primary' : 'text-dark'}`}>
+                    <div className={`font-medium mb-2 ${isToday ? 'text-primary' : 'text-dark dark:text-white'}`}>
                       {date.getDate()}
                     </div>
                     
@@ -410,7 +410,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                         const meal = dayMeals.find(m => m.type === mealType);
                         return (
                           <div key={mealType} className="text-xs">
-                            <div className="text-dark/60 capitalize">{mealType.charAt(0)}</div>
+                            <div className="text-dark/60 dark:text-gray-300 capitalize">{mealType.charAt(0)}</div>
                             {meal ? (
                               <div 
                                 className="p-1 rounded text-white text-xs truncate cursor-pointer"
@@ -442,13 +442,13 @@ export const AdvancedMealPlanner: React.FC = () => {
 
           {/* Meal Templates */}
           <div className="card mt-6">
-            <h3 className="font-semibold text-dark mb-4">Age-Appropriate Meal Ideas</h3>
+            <h3 className="font-semibold text-dark dark:text-white mb-4">Age-Appropriate Meal Ideas</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {Object.entries(mealTemplates).map(([ageGroup, templates]) => (
                 <div key={ageGroup} className="space-y-2">
-                  <h4 className="font-medium text-dark capitalize">{ageGroup}</h4>
+                  <h4 className="font-medium text-dark dark:text-white capitalize">{ageGroup}</h4>
                   {templates.slice(0, 3).map((template, i) => (
-                    <div key={i} className="p-2 bg-white/20 rounded-lg text-sm text-dark/80 hover:bg-white/30 cursor-pointer transition-colors">
+                    <div key={i} className="p-2 bg-white/20 rounded-lg text-sm text-dark/80 dark:text-gray-200 hover:bg-white/30 cursor-pointer transition-colors">
                       {template.name}
                     </div>
                   ))}
@@ -464,7 +464,7 @@ export const AdvancedMealPlanner: React.FC = () => {
             <div className="card">
               <div className="flex items-center space-x-2 mb-4">
                 <Target size={20} className="text-primary" />
-                <h3 className="font-semibold text-dark">Weekly Nutrition</h3>
+                <h3 className="font-semibold text-dark dark:text-white">Weekly Nutrition</h3>
               </div>
               
               <div className="space-y-3">
@@ -484,9 +484,9 @@ export const AdvancedMealPlanner: React.FC = () => {
                           className="w-3 h-3 rounded-full"
                           style={{ backgroundColor: nutrient.color }}
                         />
-                        <span className="text-sm text-dark">{nutrient.label}</span>
+                        <span className="text-sm text-dark dark:text-white">{nutrient.label}</span>
                       </div>
-                      <span className="font-medium text-dark">
+                      <span className="font-medium text-dark dark:text-white">
                         {Math.round(value)}{nutrient.unit}
                       </span>
                     </div>
@@ -500,7 +500,7 @@ export const AdvancedMealPlanner: React.FC = () => {
           <div className="card">
             <div className="flex items-center space-x-2 mb-4">
               <Shield size={20} className="text-red-500" />
-              <h3 className="font-semibold text-dark">Allergy Alerts</h3>
+              <h3 className="font-semibold text-dark dark:text-white">Allergy Alerts</h3>
             </div>
             
             <div className="space-y-2">
@@ -511,7 +511,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: child.colorTag }}
                     />
-                    <span className="font-medium text-dark">{child.name}</span>
+                    <span className="font-medium text-dark dark:text-white">{child.name}</span>
                   </div>
                   {child.allergies && child.allergies.length > 0 ? (
                     <div className="space-y-1">
@@ -522,7 +522,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                       ))}
                     </div>
                   ) : (
-                    <span className="text-xs text-dark/60">No known allergies</span>
+                    <span className="text-xs text-dark/60 dark:text-gray-300">No known allergies</span>
                   )}
                 </div>
               ))}
@@ -531,24 +531,24 @@ export const AdvancedMealPlanner: React.FC = () => {
 
           {/* Quick Actions */}
           <div className="card">
-            <h3 className="font-semibold text-dark mb-4">Quick Actions</h3>
+            <h3 className="font-semibold text-dark dark:text-white mb-4">Quick Actions</h3>
             <div className="space-y-2">
               <button className="w-full p-3 text-left bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
                 <div className="flex items-center space-x-2">
                   <BookOpen size={16} className="text-primary" />
-                  <span className="text-sm text-dark">Recipe Suggestions</span>
+                  <span className="text-sm text-dark dark:text-white">Recipe Suggestions</span>
                 </div>
               </button>
               <button className="w-full p-3 text-left bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
                 <div className="flex items-center space-x-2">
                   <Zap size={16} className="text-warning" />
-                  <span className="text-sm text-dark">Quick Meals (15 min)</span>
+                  <span className="text-sm text-dark dark:text-white">Quick Meals (15 min)</span>
                 </div>
               </button>
               <button className="w-full p-3 text-left bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
                 <div className="flex items-center space-x-2">
                   <Users size={16} className="text-accent" />
-                  <span className="text-sm text-dark">Family Meal Ideas</span>
+                  <span className="text-sm text-dark dark:text-white">Family Meal Ideas</span>
                 </div>
               </button>
             </div>
@@ -564,7 +564,7 @@ export const AdvancedMealPlanner: React.FC = () => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <ShoppingCart size={24} className="text-primary" />
-                  <h2 className="text-xl font-bold text-dark">Smart Grocery List</h2>
+                  <h2 className="text-xl font-bold text-dark dark:text-white">Smart Grocery List</h2>
                 </div>
                 <button 
                   onClick={() => setShowGroceryList(false)}
@@ -577,7 +577,7 @@ export const AdvancedMealPlanner: React.FC = () => {
 
             <div className="p-6 max-h-[70vh] overflow-y-auto">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-dark/70">
+                <span className="text-dark/70 dark:text-gray-300">
                   {groceryList.items.filter(item => item.purchased).length} of {groceryList.items.length} items purchased
                 </span>
                 <button className="btn-secondary text-sm">Auto-Generate from Meals</button>
@@ -590,7 +590,7 @@ export const AdvancedMealPlanner: React.FC = () => {
 
                 return (
                   <div key={category} className="mb-6">
-                    <h3 className="font-semibold text-dark mb-3 flex items-center space-x-2">
+                    <h3 className="font-semibold text-dark dark:text-white mb-3 flex items-center space-x-2">
                       <span>{getCategoryIcon(category.toLowerCase())}</span>
                       <span>{category}</span>
                     </h3>
@@ -604,10 +604,10 @@ export const AdvancedMealPlanner: React.FC = () => {
                             readOnly
                           />
                           <div className="flex-1">
-                            <span className={`text-dark ${item.purchased ? 'line-through opacity-60' : ''}`}>
+                            <span className={`text-dark dark:text-white ${item.purchased ? 'line-through opacity-60' : ''}`}>
                               {item.name}
                             </span>
-                            <div className="text-xs text-dark/60">{item.quantity}</div>
+                            <div className="text-xs text-dark/60 dark:text-gray-300">{item.quantity}</div>
                           </div>
                           {item.mealIds.length > 0 && (
                             <div className="flex space-x-1">
@@ -647,7 +647,7 @@ export const AdvancedMealPlanner: React.FC = () => {
           <div className="glassmorphism rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden">
             <div className="p-6 border-b border-white/20">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold text-dark">Add New Meal</h2>
+                <h2 className="text-xl font-bold text-dark dark:text-white">Add New Meal</h2>
                 <button 
                   onClick={() => setShowMealModal(false)}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"
@@ -661,7 +661,7 @@ export const AdvancedMealPlanner: React.FC = () => {
               {/* Basic Info */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Meal Name</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Meal Name</label>
                   <input
                     type="text"
                     className="input-field"
@@ -671,7 +671,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Meal Type</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Meal Type</label>
                   <select
                     className="input-field"
                     value={newMeal.type}
@@ -684,7 +684,7 @@ export const AdvancedMealPlanner: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Age Group</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Age Group</label>
                   <select
                     className="input-field"
                     value={newMeal.ageGroup}

@@ -187,8 +187,8 @@ export const SmartCalendar: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Smart Family Calendar</h1>
-          <p className="text-dark/70">Organize your family's schedule with intelligent features</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Smart Family Calendar</h1>
+          <p className="text-dark/70 dark:text-gray-300">Organize your family's schedule with intelligent features</p>
         </div>
         <div className="flex items-center space-x-3">
           <button className="flex items-center space-x-2 px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors">
@@ -235,7 +235,7 @@ export const SmartCalendar: React.FC = () => {
                 className={`px-4 py-2 rounded-lg transition-colors capitalize ${
                   viewMode === mode
                     ? 'bg-primary text-white'
-                    : 'hover:bg-white/20 text-dark/70'
+                    : 'hover:bg-white/20 text-dark/70 dark:text-gray-300'
                 }`}
               >
                 {mode}
@@ -252,7 +252,7 @@ export const SmartCalendar: React.FC = () => {
           >
             <ChevronLeft size={20} />
           </button>
-          <h2 className="text-xl font-semibold text-dark min-w-48 text-center">
+          <h2 className="text-xl font-semibold text-dark dark:text-white min-w-48 text-center">
             {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
           </h2>
           <button 
@@ -270,7 +270,7 @@ export const SmartCalendar: React.FC = () => {
           {/* Week Headers */}
           <div className="grid grid-cols-7 gap-2 mb-4">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-              <div key={day} className="p-3 text-center font-semibold text-dark/70 border-b border-white/20">
+              <div key={day} className="p-3 text-center font-semibold text-dark/70 dark:text-gray-300 border-b border-white/20">
                 {day}
               </div>
             ))}
@@ -296,7 +296,7 @@ export const SmartCalendar: React.FC = () => {
                   }}
                 >
                   <div className={`font-medium mb-1 ${
-                    isCurrentMonth ? 'text-dark' : 'text-dark/40'
+                    isCurrentMonth ? 'text-dark dark:text-white' : 'text-dark/40 dark:text-gray-500'
                   } ${isToday ? 'text-primary font-bold' : ''}`}>
                     {date.getDate()}
                   </div>
@@ -319,7 +319,7 @@ export const SmartCalendar: React.FC = () => {
                       </div>
                     ))}
                     {dayEvents.length > 3 && (
-                      <div className="text-xs text-dark/60">
+                      <div className="text-xs text-dark/60 dark:text-gray-300">
                         +{dayEvents.length - 3} more
                       </div>
                     )}
@@ -336,12 +336,12 @@ export const SmartCalendar: React.FC = () => {
         <div className="lg:col-span-2">
           {/* Event Types Legend */}
           <div className="card">
-            <h3 className="font-semibold text-dark mb-3">Event Types</h3>
+            <h3 className="font-semibold text-dark dark:text-white mb-3">Event Types</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {Object.entries(eventTypeIcons).map(([type, icon]) => (
                 <div key={type} className="flex items-center space-x-2 text-sm">
                   <span className="text-lg">{icon}</span>
-                  <span className="text-dark/70 capitalize">{type.replace('-', ' ')}</span>
+                  <span className="text-dark/70 dark:text-gray-300 capitalize">{type.replace('-', ' ')}</span>
                 </div>
               ))}
             </div>
@@ -350,8 +350,8 @@ export const SmartCalendar: React.FC = () => {
 
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold text-dark">Upcoming Events</h3>
-            <Filter size={16} className="text-dark/60" />
+            <h3 className="font-semibold text-dark dark:text-white">Upcoming Events</h3>
+            <Filter size={16} className="text-dark/60 dark:text-gray-400" />
           </div>
           <div className="space-y-3">
             {visibleEvents
@@ -368,10 +368,10 @@ export const SmartCalendar: React.FC = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center space-x-2">
                         <span className="text-sm">{eventTypeIcons[event.type]}</span>
-                        <p className="font-medium text-dark truncate">{event.title}</p>
-                        {event.recurring.enabled && <Repeat size={12} className="text-dark/60" />}
+                        <p className="font-medium text-dark dark:text-white truncate">{event.title}</p>
+                        {event.recurring.enabled && <Repeat size={12} className="text-dark/60 dark:text-gray-400" />}
                       </div>
-                      <div className="flex items-center space-x-4 mt-1 text-xs text-dark/60">
+                      <div className="flex items-center space-x-4 mt-1 text-xs text-dark/60 dark:text-gray-300">
                         <span className="flex items-center space-x-1">
                           <Clock size={10} />
                           <span>{event.startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
@@ -416,7 +416,7 @@ export const SmartCalendar: React.FC = () => {
               {/* Basic Info */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Title</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Title</label>
                   <input
                     type="text"
                     className="input-field"
@@ -426,7 +426,7 @@ export const SmartCalendar: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Type</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Type</label>
                   <select
                     className="input-field"
                     value={newEvent.type}
@@ -444,7 +444,7 @@ export const SmartCalendar: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-dark mb-1">Description</label>
+                <label className="block text-sm font-medium text-dark dark:text-white mb-1">Description</label>
                 <textarea
                   className="input-field"
                   rows={3}
@@ -457,7 +457,7 @@ export const SmartCalendar: React.FC = () => {
               {/* Date & Time */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">Start Date & Time</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">Start Date & Time</label>
                   <input
                     type="datetime-local"
                     className="input-field"
@@ -466,7 +466,7 @@ export const SmartCalendar: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-1">End Date & Time</label>
+                  <label className="block text-sm font-medium text-dark dark:text-white mb-1">End Date & Time</label>
                   <input
                     type="datetime-local"
                     className="input-field"
@@ -484,12 +484,12 @@ export const SmartCalendar: React.FC = () => {
                   onChange={(e) => setNewEvent(prev => ({ ...prev, allDay: e.target.checked }))}
                   className="rounded border-gray-300"
                 />
-                <label htmlFor="allDay" className="text-sm text-dark">All Day Event</label>
+                <label htmlFor="allDay" className="text-sm text-dark dark:text-white">All Day Event</label>
               </div>
 
               {/* Location */}
               <div>
-                <label className="block text-sm font-medium text-dark mb-1">Location</label>
+                <label className="block text-sm font-medium text-dark dark:text-white mb-1">Location</label>
                 <input
                   type="text"
                   className="input-field"
@@ -512,13 +512,13 @@ export const SmartCalendar: React.FC = () => {
                     }))}
                     className="rounded border-gray-300"
                   />
-                  <label htmlFor="recurring" className="text-sm text-dark">Recurring Event</label>
+                  <label htmlFor="recurring" className="text-sm text-dark dark:text-white">Recurring Event</label>
                 </div>
 
                 {newEvent.recurring?.enabled && (
                   <div className="grid md:grid-cols-2 gap-4 pl-6">
                     <div>
-                      <label className="block text-sm font-medium text-dark mb-1">Frequency</label>
+                      <label className="block text-sm font-medium text-dark dark:text-white mb-1">Frequency</label>
                       <select
                         className="input-field"
                         value={newEvent.recurring.frequency}
@@ -534,7 +534,7 @@ export const SmartCalendar: React.FC = () => {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-dark mb-1">Every</label>
+                      <label className="block text-sm font-medium text-dark dark:text-white mb-1">Every</label>
                       <input
                         type="number"
                         className="input-field"
@@ -563,12 +563,12 @@ export const SmartCalendar: React.FC = () => {
                     }))}
                     className="rounded border-gray-300"
                   />
-                  <label htmlFor="reminders" className="text-sm text-dark">Enable Reminders</label>
+                  <label htmlFor="reminders" className="text-sm text-dark dark:text-white">Enable Reminders</label>
                 </div>
 
                 {newEvent.reminders?.enabled && (
                   <div className="pl-6">
-                    <label className="block text-sm font-medium text-dark mb-2">Remind me:</label>
+                    <label className="block text-sm font-medium text-dark dark:text-white mb-2">Remind me:</label>
                     <div className="space-y-2">
                       {[15, 30, 60, 1440].map(minutes => (
                         <div key={minutes} className="flex items-center space-x-2">
@@ -592,7 +592,7 @@ export const SmartCalendar: React.FC = () => {
                             }}
                             className="rounded border-gray-300"
                           />
-                          <label htmlFor={`reminder-${minutes}`} className="text-sm text-dark">
+                          <label htmlFor={`reminder-${minutes}`} className="text-sm text-dark dark:text-white">
                             {minutes < 60 ? `${minutes} minutes` : minutes === 60 ? '1 hour' : '1 day'} before
                           </label>
                         </div>
@@ -604,13 +604,13 @@ export const SmartCalendar: React.FC = () => {
 
               {/* Color */}
               <div>
-                <label className="block text-sm font-medium text-dark mb-1">Color</label>
+                <label className="block text-sm font-medium text-dark dark:text-white mb-1">Color</label>
                 <div className="flex space-x-2">
                   {['#5AA9E6', '#FF8C94', '#A4EDDA', '#FFEC99', '#9B59B6', '#E67E22'].map(color => (
                     <button
                       key={color}
                       className={`w-8 h-8 rounded-full border-2 ${
-                        newEvent.color === color ? 'border-dark' : 'border-white/30'
+                        newEvent.color === color ? 'border-dark dark:border-white' : 'border-white/30'
                       }`}
                       style={{ backgroundColor: color }}
                       onClick={() => setNewEvent(prev => ({ ...prev, color }))}
@@ -644,7 +644,7 @@ export const SmartCalendar: React.FC = () => {
           <div className="glassmorphism rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden">
             <div className="p-6 border-b border-white/20">
               <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold text-dark">External Calendar Sync</h2>
+                <h2 className="text-xl font-bold text-dark dark:text-white">External Calendar Sync</h2>
                 <button 
                   onClick={() => setShowSyncModal(false)}
                   className="p-2 hover:bg-white/20 rounded-lg transition-colors"

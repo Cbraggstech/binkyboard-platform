@@ -49,8 +49,8 @@ export const TasksPage: React.FC = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Tasks & Chores</h1>
-          <p className="text-dark/70">Manage and track daily tasks for your children</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Tasks & Chores</h1>
+          <p className="text-dark/70 dark:text-gray-300">Manage and track daily tasks for your children</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -60,14 +60,14 @@ export const TasksPage: React.FC = () => {
 
       {/* Filters */}
       <div className="flex items-center space-x-4">
-        <button className="flex items-center space-x-2 px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors">
+        <button className="flex items-center space-x-2 px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors text-dark dark:text-white">
           <Filter size={16} />
           <span>All Tasks</span>
         </button>
-        <button className="px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors">
+        <button className="px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors text-dark dark:text-white">
           Emma's Tasks
         </button>
-        <button className="px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors">
+        <button className="px-4 py-2 glassmorphism rounded-xl hover:bg-white/30 transition-colors text-dark dark:text-white">
           Liam's Tasks
         </button>
       </div>
@@ -77,8 +77,8 @@ export const TasksPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">{tasks.filter(t => !t.completed).length}</p>
-              <p className="text-dark/70 text-sm">Pending Tasks</p>
+              <p className="text-2xl font-bold text-dark dark:text-white">{tasks.filter(t => !t.completed).length}</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Pending Tasks</p>
             </div>
             <Clock className="text-primary" size={24} />
           </div>
@@ -86,8 +86,8 @@ export const TasksPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">{tasks.filter(t => t.completed).length}</p>
-              <p className="text-dark/70 text-sm">Completed Today</p>
+              <p className="text-2xl font-bold text-dark dark:text-white">{tasks.filter(t => t.completed).length}</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Completed Today</p>
             </div>
             <CheckSquare className="text-primary" size={24} />
           </div>
@@ -95,10 +95,10 @@ export const TasksPage: React.FC = () => {
         <div className="card">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-dark">
+              <p className="text-2xl font-bold text-dark dark:text-white">
                 {tasks.reduce((sum, task) => sum + (task.completed ? task.points : 0), 0)}
               </p>
-              <p className="text-dark/70 text-sm">Points Earned</p>
+              <p className="text-dark/70 dark:text-gray-300 text-sm">Points Earned</p>
             </div>
             <Trophy className="text-warning" size={24} />
           </div>
@@ -107,7 +107,7 @@ export const TasksPage: React.FC = () => {
 
       {/* Tasks List */}
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold text-dark">Today's Tasks</h2>
+        <h2 className="text-xl font-semibold text-dark dark:text-white">Today's Tasks</h2>
         {tasks.map((task) => (
           <div
             key={task.id}
@@ -128,27 +128,27 @@ export const TasksPage: React.FC = () => {
               
               <div className="flex-1">
                 <div className="flex items-center space-x-3 mb-1">
-                  <h3 className={`font-semibold ${task.completed ? 'line-through text-dark/60' : 'text-dark'}`}>
+                  <h3 className={`font-semibold ${task.completed ? 'line-through text-dark/60 dark:text-gray-400' : 'text-dark dark:text-white'}`}>
                     {task.title}
                   </h3>
                   <span className={`px-2 py-1 rounded-lg text-xs font-medium ${categoryColors[task.category as keyof typeof categoryColors]}`}>
                     {task.category}
                   </span>
                   {task.recurring && (
-                    <span className="px-2 py-1 bg-gray-200 text-gray-700 rounded-lg text-xs">
+                    <span className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-xs">
                       {task.recurring}
                     </span>
                   )}
                 </div>
-                <p className="text-dark/70 text-sm">{task.description}</p>
-                <p className="text-dark/60 text-xs mt-1">Assigned to: {task.child}</p>
+                <p className="text-dark/70 dark:text-gray-300 text-sm">{task.description}</p>
+                <p className="text-dark/60 dark:text-gray-300 text-xs mt-1">Assigned to: {task.child}</p>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
               <div className="text-right">
                 <p className="font-semibold text-primary">+{task.points} points</p>
-                <p className="text-xs text-dark/60">Due today</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Due today</p>
               </div>
             </div>
           </div>

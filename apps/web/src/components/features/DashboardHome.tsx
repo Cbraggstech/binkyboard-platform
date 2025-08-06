@@ -32,8 +32,8 @@ export const DashboardHome: React.FC = () => {
     <div className="space-y-6">
       {/* Welcome Header */}
       <div className="glassmorphism rounded-2xl p-6 bg-gradient-to-r from-primary/10 to-secondary/10">
-        <h1 className="text-3xl font-bold text-dark mb-2">Good morning! ☀️</h1>
-        <p className="text-dark/70">
+        <h1 className="text-3xl font-bold text-dark dark:text-white mb-2">Good morning! ☀️</h1>
+        <p className="text-dark/70 dark:text-gray-300">
           Today is a great day to accomplish something amazing with your family.
         </p>
       </div>
@@ -45,9 +45,9 @@ export const DashboardHome: React.FC = () => {
             <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
               <CheckSquare size={20} className="text-primary" />
             </div>
-            <span className="text-2xl font-bold text-dark">3</span>
+            <span className="text-2xl font-bold text-dark dark:text-white">3</span>
           </div>
-          <p className="text-dark/70 text-sm">Tasks Today</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Tasks Today</p>
         </div>
 
         <div className="card">
@@ -55,9 +55,9 @@ export const DashboardHome: React.FC = () => {
             <div className="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center">
               <Calendar size={20} className="text-secondary" />
             </div>
-            <span className="text-2xl font-bold text-dark">2</span>
+            <span className="text-2xl font-bold text-dark dark:text-white">2</span>
           </div>
-          <p className="text-dark/70 text-sm">Events Today</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Events Today</p>
         </div>
 
         <div className="card">
@@ -65,9 +65,9 @@ export const DashboardHome: React.FC = () => {
             <div className="w-10 h-10 bg-warning/20 rounded-xl flex items-center justify-center">
               <Trophy size={20} className="text-warning" />
             </div>
-            <span className="text-2xl font-bold text-dark">85</span>
+            <span className="text-2xl font-bold text-dark dark:text-white">85</span>
           </div>
-          <p className="text-dark/70 text-sm">Points Earned</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Points Earned</p>
         </div>
 
         <div className="card">
@@ -75,9 +75,9 @@ export const DashboardHome: React.FC = () => {
             <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center">
               <Heart size={20} className="text-accent" />
             </div>
-            <span className="text-2xl font-bold text-dark">😊</span>
+            <span className="text-2xl font-bold text-dark dark:text-white">😊</span>
           </div>
-          <p className="text-dark/70 text-sm">Family Mood</p>
+          <p className="text-dark/70 dark:text-gray-300 text-sm">Family Mood</p>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export const DashboardHome: React.FC = () => {
         {/* Today's Tasks */}
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-dark">Today's Tasks</h2>
+            <h2 className="text-xl font-semibold text-dark dark:text-white">Today's Tasks</h2>
             <button className="p-2 hover:bg-white/20 rounded-lg transition-colors">
               <Plus size={16} />
             </button>
@@ -111,10 +111,10 @@ export const DashboardHome: React.FC = () => {
                     {task.completed && <CheckSquare size={12} className="text-white" />}
                   </button>
                   <div>
-                    <p className={`font-medium ${task.completed ? 'line-through text-dark/60' : 'text-dark'}`}>
+                    <p className={`font-medium ${task.completed ? 'line-through text-dark/60 dark:text-gray-400' : 'text-dark dark:text-white'}`}>
                       {task.title}
                     </p>
-                    <p className="text-xs text-dark/60">{task.child}</p>
+                    <p className="text-xs text-dark/60 dark:text-gray-300">{task.child}</p>
                   </div>
                 </div>
                 <span className="text-sm font-medium text-primary">+{task.points}</span>
@@ -126,7 +126,7 @@ export const DashboardHome: React.FC = () => {
         {/* Upcoming Events */}
         <div className="card">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-dark">Upcoming Events</h2>
+            <h2 className="text-xl font-semibold text-dark dark:text-white">Upcoming Events</h2>
             <button className="p-2 hover:bg-white/20 rounded-lg transition-colors">
               <Plus size={16} />
             </button>
@@ -138,8 +138,8 @@ export const DashboardHome: React.FC = () => {
                   <Clock size={16} className="text-secondary" />
                 </div>
                 <div className="flex-1">
-                  <p className="font-medium text-dark">{event.title}</p>
-                  <p className="text-sm text-dark/60">{event.child} • {event.time}</p>
+                  <p className="font-medium text-dark dark:text-white">{event.title}</p>
+                  <p className="text-sm text-dark/60 dark:text-gray-300">{event.child} • {event.time}</p>
                 </div>
               </div>
             ))}
@@ -150,15 +150,15 @@ export const DashboardHome: React.FC = () => {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Mood Overview */}
         <div className="card">
-          <h2 className="text-xl font-semibold text-dark mb-4">Family Mood</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">Family Mood</h2>
           <div className="space-y-3">
             {moodStats.map((mood, index) => (
               <div key={index} className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <span className="text-2xl">{mood.emoji}</span>
-                  <span className="text-dark/70">{mood.label}</span>
+                  <span className="text-dark/70 dark:text-gray-300">{mood.label}</span>
                 </div>
-                <span className="font-semibold text-dark">{mood.count}</span>
+                <span className="font-semibold text-dark dark:text-white">{mood.count}</span>
               </div>
             ))}
           </div>
@@ -166,12 +166,12 @@ export const DashboardHome: React.FC = () => {
 
         {/* Weekly Progress */}
         <div className="card">
-          <h2 className="text-xl font-semibold text-dark mb-4">This Week</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white mb-4">This Week</h2>
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-dark/70">Tasks Completed</span>
-                <span className="font-medium">12/15</span>
+                <span className="text-dark/70 dark:text-gray-300">Tasks Completed</span>
+                <span className="font-medium dark:text-white">12/15</span>
               </div>
               <div className="w-full bg-white/20 rounded-full h-2">
                 <div className="bg-primary h-2 rounded-full" style={{ width: '80%' }}></div>
@@ -179,8 +179,8 @@ export const DashboardHome: React.FC = () => {
             </div>
             <div>
               <div className="flex justify-between text-sm mb-1">
-                <span className="text-dark/70">Points Earned</span>
-                <span className="font-medium">245/300</span>
+                <span className="text-dark/70 dark:text-gray-300">Points Earned</span>
+                <span className="font-medium dark:text-white">245/300</span>
               </div>
               <div className="w-full bg-white/20 rounded-full h-2">
                 <div className="bg-secondary h-2 rounded-full" style={{ width: '82%' }}></div>
@@ -195,16 +195,16 @@ export const DashboardHome: React.FC = () => {
             <div className="w-6 h-6 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
               <Star size={12} className="text-white" />
             </div>
-            <h2 className="text-xl font-semibold text-dark">AI Suggestions</h2>
+            <h2 className="text-xl font-semibold text-dark dark:text-white">AI Suggestions</h2>
           </div>
           <div className="space-y-3">
             <div className="p-3 bg-white/20 rounded-xl">
-              <p className="text-sm text-dark">
+              <p className="text-sm text-dark dark:text-white">
                 Emma has been completing tasks consistently. Consider adding a bonus reward!
               </p>
             </div>
             <div className="p-3 bg-white/20 rounded-xl">
-              <p className="text-sm text-dark">
+              <p className="text-sm text-dark dark:text-white">
                 Schedule Liam's favorite activity after completing homework to boost motivation.
               </p>
             </div>

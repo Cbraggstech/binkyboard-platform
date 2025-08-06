@@ -121,8 +121,8 @@ export const EnhancedChildrenPage: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Children Profiles</h1>
-          <p className="text-dark/70">Comprehensive profiles for all your children</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Children Profiles</h1>
+          <p className="text-dark/70 dark:text-gray-300">Comprehensive profiles for all your children</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -147,10 +147,10 @@ export const EnhancedChildrenPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="flex items-center space-x-2">
-                    <h2 className="text-xl font-semibold text-dark">{child.name}</h2>
+                    <h2 className="text-xl font-semibold text-dark dark:text-white">{child.name}</h2>
                     <span className="text-lg">{child.gender === 'male' ? '♂️' : child.gender === 'female' ? '♀️' : '⚧'}</span>
                   </div>
-                  <p className="text-dark/70">{child.age} years old</p>
+                  <p className="text-dark/70 dark:text-gray-300">{child.age} years old</p>
                   <div className="flex items-center space-x-2 mt-1">
                     <span className={`px-2 py-1 rounded-lg text-xs font-medium ${getDevelopmentalStageColor(child.developmentalStage)}`}>
                       {getDevelopmentalStageIcon(child.developmentalStage)} {child.developmentalStage}
@@ -159,7 +159,7 @@ export const EnhancedChildrenPage: React.FC = () => {
                 </div>
               </div>
               <button className="p-2 hover:bg-white/20 rounded-lg transition-colors">
-                <Edit size={16} className="text-dark/60" />
+                <Edit size={16} className="text-dark/60 dark:text-gray-400" />
               </button>
             </div>
 
@@ -169,30 +169,30 @@ export const EnhancedChildrenPage: React.FC = () => {
                 <div className="flex items-center justify-center mb-1">
                   <Trophy size={16} className="text-warning" />
                 </div>
-                <p className="font-semibold text-dark">{child.totalPoints}</p>
-                <p className="text-xs text-dark/60">Points</p>
+                <p className="font-semibold text-dark dark:text-white">{child.totalPoints}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Points</p>
               </div>
               <div className="text-center p-3 bg-white/20 rounded-lg">
                 <div className="flex items-center justify-center mb-1">
                   <Calendar size={16} className="text-primary" />
                 </div>
-                <p className="font-semibold text-dark">{child.tasksCompleted}</p>
-                <p className="text-xs text-dark/60">Tasks</p>
+                <p className="font-semibold text-dark dark:text-white">{child.tasksCompleted}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Tasks</p>
               </div>
               <div className="text-center p-3 bg-white/20 rounded-lg">
                 <div className="flex items-center justify-center mb-1">
                   <Heart size={16} className="text-secondary" />
                 </div>
-                <p className="font-semibold text-dark text-lg">{child.recentMood}</p>
-                <p className="text-xs text-dark/60">Mood</p>
+                <p className="font-semibold text-dark dark:text-white text-lg">{child.recentMood}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Mood</p>
               </div>
             </div>
 
             {/* Quick Info */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <GraduationCap size={14} className="text-dark/60" />
-                <span className="text-sm text-dark/70">{child.schoolInfo?.schoolName} - {child.schoolInfo?.grade}</span>
+                <GraduationCap size={14} className="text-dark/60 dark:text-gray-400" />
+                <span className="text-sm text-dark/70 dark:text-gray-300">{child.schoolInfo?.schoolName} - {child.schoolInfo?.grade}</span>
               </div>
               {child.allergies.length > 0 && (
                 <div className="flex items-center space-x-2">
@@ -223,9 +223,9 @@ export const EnhancedChildrenPage: React.FC = () => {
                     )}
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-dark">{selectedChild.name}</h2>
-                    <p className="text-dark/70">{selectedChild.age} years old • {selectedChild.developmentalStage}</p>
-                    <p className="text-dark/60 text-sm">Born: {selectedChild.dateOfBirth.toDateString()}</p>
+                    <h2 className="text-2xl font-bold text-dark dark:text-white">{selectedChild.name}</h2>
+                    <p className="text-dark/70 dark:text-gray-300">{selectedChild.age} years old • {selectedChild.developmentalStage}</p>
+                    <p className="text-dark/60 dark:text-gray-300 text-sm">Born: {selectedChild.dateOfBirth.toDateString()}</p>
                   </div>
                 </div>
                 <button 
@@ -252,7 +252,7 @@ export const EnhancedChildrenPage: React.FC = () => {
                       className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                         activeTab === tab.id
                           ? 'bg-primary/20 text-primary'
-                          : 'hover:bg-white/20 text-dark/70'
+                          : 'hover:bg-white/20 text-dark/70 dark:text-gray-300'
                       }`}
                     >
                       <Icon size={16} />
@@ -267,18 +267,18 @@ export const EnhancedChildrenPage: React.FC = () => {
               {activeTab === 'profile' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Basic Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Basic Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Full Name</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Full Name</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.name} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Date of Birth</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Date of Birth</label>
                         <input type="date" className="input-field" defaultValue={selectedChild.dateOfBirth.toISOString().split('T')[0]} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Gender</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Gender</label>
                         <select className="input-field" defaultValue={selectedChild.gender}>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
@@ -287,14 +287,14 @@ export const EnhancedChildrenPage: React.FC = () => {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Color Tag</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Color Tag</label>
                         <input type="color" className="input-field" defaultValue={selectedChild.colorTag} />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Preferences & Interests</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Preferences & Interests</h3>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {selectedChild.preferences.map((pref, i) => (
                         <span key={i} className="px-3 py-1 bg-accent/20 text-accent rounded-lg text-sm">
@@ -306,10 +306,10 @@ export const EnhancedChildrenPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Dietary Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Dietary Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Allergies</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Allergies</label>
                         <div className="flex flex-wrap gap-2 mb-2">
                           {selectedChild.allergies.map((allergy, i) => (
                             <span key={i} className="px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs">
@@ -320,7 +320,7 @@ export const EnhancedChildrenPage: React.FC = () => {
                         <input type="text" className="input-field" placeholder="Add allergy..." />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Dietary Restrictions</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Dietary Restrictions</label>
                         <div className="flex flex-wrap gap-2 mb-2">
                           {selectedChild.dietaryRestrictions.map((restriction, i) => (
                             <span key={i} className="px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-xs">
@@ -338,42 +338,42 @@ export const EnhancedChildrenPage: React.FC = () => {
               {activeTab === 'medical' && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Medical Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Medical Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Blood Type</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Blood Type</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.medicalInfo.bloodType} />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Doctor Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Doctor Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Doctor Name</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Doctor Name</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.medicalInfo.doctorInfo.name} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Phone</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Phone</label>
                         <input type="tel" className="input-field" defaultValue={selectedChild.medicalInfo.doctorInfo.phone} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Clinic/Hospital</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Clinic/Hospital</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.medicalInfo.doctorInfo.clinic} />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">Insurance Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">Insurance Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Provider</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Provider</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.medicalInfo.insuranceInfo.provider} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Policy Number</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Policy Number</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.medicalInfo.insuranceInfo.policyNumber} />
                       </div>
                     </div>
@@ -384,22 +384,22 @@ export const EnhancedChildrenPage: React.FC = () => {
               {activeTab === 'school' && selectedChild.schoolInfo && (
                 <div className="space-y-6">
                   <div>
-                    <h3 className="font-semibold text-dark mb-3">School Information</h3>
+                    <h3 className="font-semibold text-dark dark:text-white mb-3">School Information</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">School Name</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">School Name</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.schoolInfo.schoolName} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Grade</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Grade</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.schoolInfo.grade} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Teacher</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Teacher</label>
                         <input type="text" className="input-field" defaultValue={selectedChild.schoolInfo.teacher} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark mb-1">Teacher Email</label>
+                        <label className="block text-sm font-medium text-dark dark:text-white mb-1">Teacher Email</label>
                         <input type="email" className="input-field" defaultValue={selectedChild.schoolInfo.teacherEmail} />
                       </div>
                     </div>
@@ -411,7 +411,7 @@ export const EnhancedChildrenPage: React.FC = () => {
                 <div className="space-y-6">
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-semibold text-dark">Emergency Contacts</h3>
+                      <h3 className="font-semibold text-dark dark:text-white">Emergency Contacts</h3>
                       <button className="btn-secondary text-sm">Add Contact</button>
                     </div>
                     <div className="space-y-3">
@@ -419,19 +419,19 @@ export const EnhancedChildrenPage: React.FC = () => {
                         <div key={contact.id} className="p-4 bg-white/20 rounded-lg">
                           <div className="grid md:grid-cols-2 gap-4">
                             <div>
-                              <label className="block text-sm font-medium text-dark mb-1">Name</label>
+                              <label className="block text-sm font-medium text-dark dark:text-white mb-1">Name</label>
                               <input type="text" className="input-field" defaultValue={contact.name} />
                             </div>
                             <div>
-                              <label className="block text-sm font-medium text-dark mb-1">Relationship</label>
+                              <label className="block text-sm font-medium text-dark dark:text-white mb-1">Relationship</label>
                               <input type="text" className="input-field" defaultValue={contact.relationship} />
                             </div>
                             <div>
-                              <label className="block text-sm font-medium text-dark mb-1">Phone</label>
+                              <label className="block text-sm font-medium text-dark dark:text-white mb-1">Phone</label>
                               <input type="tel" className="input-field" defaultValue={contact.phone} />
                             </div>
                             <div>
-                              <label className="block text-sm font-medium text-dark mb-1">Email</label>
+                              <label className="block text-sm font-medium text-dark dark:text-white mb-1">Email</label>
                               <input type="email" className="input-field" defaultValue={contact.email} />
                             </div>
                           </div>

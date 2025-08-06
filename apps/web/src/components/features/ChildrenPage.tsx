@@ -31,8 +31,8 @@ export const ChildrenPage: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-dark">Children Profiles</h1>
-          <p className="text-dark/70">Manage your children's profiles and preferences</p>
+          <h1 className="text-3xl font-bold text-dark dark:text-white">Children Profiles</h1>
+          <p className="text-dark/70 dark:text-gray-300">Manage your children's profiles and preferences</p>
         </div>
         <button className="btn-primary flex items-center space-x-2">
           <Plus size={20} />
@@ -50,12 +50,12 @@ export const ChildrenPage: React.FC = () => {
                   <span className="text-white font-bold text-xl">{child.name[0]}</span>
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-dark">{child.name}</h2>
-                  <p className="text-dark/70">{child.age} years old</p>
+                  <h2 className="text-xl font-semibold text-dark dark:text-white">{child.name}</h2>
+                  <p className="text-dark/70 dark:text-gray-300">{child.age} years old</p>
                 </div>
               </div>
               <button className="p-2 hover:bg-white/20 rounded-lg transition-colors">
-                <Edit size={16} className="text-dark/60" />
+                <Edit size={16} className="text-dark/60 dark:text-gray-300" />
               </button>
             </div>
 
@@ -65,28 +65,28 @@ export const ChildrenPage: React.FC = () => {
                 <div className="flex items-center justify-center mb-1">
                   <Trophy size={16} className="text-warning" />
                 </div>
-                <p className="font-semibold text-dark">{child.totalPoints}</p>
-                <p className="text-xs text-dark/60">Points</p>
+                <p className="font-semibold text-dark dark:text-white">{child.totalPoints}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Points</p>
               </div>
               <div className="text-center p-3 bg-white/20 rounded-lg">
                 <div className="flex items-center justify-center mb-1">
                   <Calendar size={16} className="text-primary" />
                 </div>
-                <p className="font-semibold text-dark">{child.tasksCompleted}</p>
-                <p className="text-xs text-dark/60">Tasks</p>
+                <p className="font-semibold text-dark dark:text-white">{child.tasksCompleted}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Tasks</p>
               </div>
               <div className="text-center p-3 bg-white/20 rounded-lg">
                 <div className="flex items-center justify-center mb-1">
                   <Heart size={16} className="text-secondary" />
                 </div>
-                <p className="font-semibold text-dark text-lg">{child.recentMood}</p>
-                <p className="text-xs text-dark/60">Mood</p>
+                <p className="font-semibold text-dark dark:text-white text-lg">{child.recentMood}</p>
+                <p className="text-xs text-dark/60 dark:text-gray-300">Mood</p>
               </div>
             </div>
 
             {/* Preferences */}
             <div className="mb-4">
-              <h3 className="font-medium text-dark mb-2">Interests</h3>
+              <h3 className="font-medium text-dark dark:text-white mb-2">Interests</h3>
               <div className="flex flex-wrap gap-2">
                 {child.preferences.map((pref, i) => (
                   <span key={i} className="px-2 py-1 bg-accent/20 text-accent rounded-lg text-xs">
@@ -99,7 +99,7 @@ export const ChildrenPage: React.FC = () => {
             {/* Allergies */}
             {child.allergies.length > 0 && (
               <div>
-                <h3 className="font-medium text-dark mb-2">Allergies</h3>
+                <h3 className="font-medium text-dark dark:text-white mb-2">Allergies</h3>
                 <div className="flex flex-wrap gap-2">
                   {child.allergies.map((allergy, i) => (
                     <span key={i} className="px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs">
@@ -119,25 +119,25 @@ export const ChildrenPage: React.FC = () => {
           <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
             <Users size={20} className="text-primary" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Family Overview</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Family Overview</h2>
         </div>
         
         <div className="grid md:grid-cols-3 gap-4">
           <div className="text-center p-4 bg-white/20 rounded-xl">
-            <p className="text-2xl font-bold text-dark mb-1">{children.length}</p>
-            <p className="text-dark/70">Children</p>
+            <p className="text-2xl font-bold text-dark dark:text-white mb-1">{children.length}</p>
+            <p className="text-dark/70 dark:text-gray-300">Children</p>
           </div>
           <div className="text-center p-4 bg-white/20 rounded-xl">
-            <p className="text-2xl font-bold text-dark mb-1">
+            <p className="text-2xl font-bold text-dark dark:text-white mb-1">
               {children.reduce((sum, child) => sum + child.totalPoints, 0)}
             </p>
-            <p className="text-dark/70">Total Points</p>
+            <p className="text-dark/70 dark:text-gray-300">Total Points</p>
           </div>
           <div className="text-center p-4 bg-white/20 rounded-xl">
-            <p className="text-2xl font-bold text-dark mb-1">
+            <p className="text-2xl font-bold text-dark dark:text-white mb-1">
               {children.reduce((sum, child) => sum + child.tasksCompleted, 0)}
             </p>
-            <p className="text-dark/70">Tasks Completed</p>
+            <p className="text-dark/70 dark:text-gray-300">Tasks Completed</p>
           </div>
         </div>
       </div>

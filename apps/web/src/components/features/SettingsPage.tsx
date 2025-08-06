@@ -17,8 +17,8 @@ export const SettingsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-dark">Settings</h1>
-        <p className="text-dark/70">Customize your BinkyBoard experience</p>
+        <h1 className="text-3xl font-bold text-dark dark:text-white">Settings</h1>
+        <p className="text-dark/70 dark:text-gray-300">Customize your BinkyBoard experience</p>
       </div>
 
       {/* Account Settings */}
@@ -27,16 +27,16 @@ export const SettingsPage: React.FC = () => {
           <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
             <Users size={20} className="text-primary" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Account</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Account</h2>
         </div>
         
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-dark mb-1">Display Name</label>
+            <label className="block text-sm font-medium text-dark dark:text-white mb-1">Display Name</label>
             <input type="text" className="input-field" defaultValue="Sarah Johnson" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-dark mb-1">Email</label>
+            <label className="block text-sm font-medium text-dark dark:text-white mb-1">Email</label>
             <input type="email" className="input-field" defaultValue="sarah@example.com" />
           </div>
           <button className="btn-primary">Update Profile</button>
@@ -49,17 +49,17 @@ export const SettingsPage: React.FC = () => {
           <div className="w-10 h-10 bg-secondary/20 rounded-xl flex items-center justify-center">
             <Bell size={20} className="text-secondary" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Notifications</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Notifications</h2>
         </div>
         
         <div className="space-y-4">
           {Object.entries(notifications).map(([key, value]) => (
             <div key={key} className="flex items-center justify-between">
               <div>
-                <h3 className="font-medium text-dark capitalize">
+                <h3 className="font-medium text-dark dark:text-white capitalize">
                   {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                 </h3>
-                <p className="text-sm text-dark/70">
+                <p className="text-sm text-dark/70 dark:text-gray-300">
                   {key === 'taskReminders' && 'Get notified about upcoming and overdue tasks'}
                   {key === 'mealAlerts' && 'Receive alerts for meal planning and grocery lists'}
                   {key === 'eventNotifications' && 'Stay updated on calendar events and appointments'}
@@ -89,17 +89,17 @@ export const SettingsPage: React.FC = () => {
           <div className="w-10 h-10 bg-accent/20 rounded-xl flex items-center justify-center">
             <Shield size={20} className="text-accent" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Privacy</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Privacy</h2>
         </div>
         
         <div className="space-y-4">
           {Object.entries(privacy).map(([key, value]) => (
             <div key={key} className="flex items-center justify-between">
               <div>
-                <h3 className="font-medium text-dark capitalize">
+                <h3 className="font-medium text-dark dark:text-white capitalize">
                   {key.replace(/([A-Z])/g, ' $1').toLowerCase()}
                 </h3>
-                <p className="text-sm text-dark/70">
+                <p className="text-sm text-dark/70 dark:text-gray-300">
                   {key === 'shareData' && 'Allow anonymous data sharing to improve BinkyBoard'}
                   {key === 'publicProfile' && 'Make your family achievements visible to other users'}
                 </p>
@@ -127,12 +127,12 @@ export const SettingsPage: React.FC = () => {
           <div className="w-10 h-10 bg-warning/20 rounded-xl flex items-center justify-center">
             <Palette size={20} className="text-warning" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Appearance</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Appearance</h2>
         </div>
         
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-dark mb-2">Theme</label>
+            <label className="block text-sm font-medium text-dark dark:text-white mb-2">Theme</label>
             <div className="grid grid-cols-3 gap-3">
               {['Light', 'Dark', 'Auto'].map((theme) => (
                 <button
@@ -155,17 +155,17 @@ export const SettingsPage: React.FC = () => {
           <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
             <CreditCard size={20} className="text-green-600" />
           </div>
-          <h2 className="text-xl font-semibold text-dark">Subscription</h2>
+          <h2 className="text-xl font-semibold text-dark dark:text-white">Subscription</h2>
         </div>
         
         <div className="space-y-4">
           <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg border border-green-200">
             <div>
-              <h3 className="font-semibold text-dark">Premium Plan</h3>
-              <p className="text-sm text-dark/70">Unlimited children, AI features, and more</p>
+              <h3 className="font-semibold text-dark dark:text-white">Premium Plan</h3>
+              <p className="text-sm text-dark/70 dark:text-gray-300">Unlimited children, AI features, and more</p>
             </div>
             <div className="text-right">
-              <p className="font-semibold text-dark">$9.99/month</p>
+              <p className="font-semibold text-dark dark:text-white">$9.99/month</p>
               <p className="text-xs text-green-600">Active</p>
             </div>
           </div>

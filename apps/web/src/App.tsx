@@ -37,7 +37,7 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gradient-to-br from-light via-white to-accent dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+      <div className="min-h-screen bg-light dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
         <AuthProvider>
           <AppContent />
         </AuthProvider>
