@@ -54,7 +54,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
       )}
 
       {/* Sidebar - Always takes space in layout */}
-      <aside className={`transition-all duration-300 h-screen glassmorphism border-r border-white/20 flex-shrink-0 ${
+      <aside className={`transition-all duration-300 h-screen glassmorphism dark:bg-slate-900/80 dark:backdrop-blur-xl border-r border-white/20 dark:border-slate-700/50 flex-shrink-0 ${
         isOpen ? 'w-80' : 'w-16'
       }`}>
         <div className="h-full overflow-y-auto overflow-x-hidden">
@@ -65,7 +65,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
               <div className="mb-4">
                 <button
                   onClick={onOpen}
-                  className="flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 hover:bg-white/20 text-dark/80 hover:text-dark group"
+                  className="flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100 group"
                   title="Open Navigation"
                 >
                   <Menu size={20} />
@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                       className={`flex items-center justify-center w-full p-3 rounded-xl transition-all duration-200 group relative ${
                         activeTab === item.id
                           ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/30'
-                          : 'hover:bg-white/20 text-dark/80 hover:text-dark'
+                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100'
                       }`}
                       title={item.label}
                     >
@@ -107,10 +107,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
             <div className="p-6">
               {/* Close Button */}
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-bold text-dark">Navigation</h2>
+                <h2 className="text-lg font-bold text-dark dark:text-slate-100">Navigation</h2>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-lg hover:bg-white/20 transition-colors text-dark/80 hover:text-dark"
+                  className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100"
                 >
                   <ChevronRight size={20} className="rotate-180" />
                 </button>
@@ -129,7 +129,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                       className={`flex items-center space-x-3 w-full px-4 py-3 rounded-xl text-left transition-all duration-200 ${
                         activeTab === item.id
                           ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary border border-primary/30'
-                          : 'hover:bg-white/20 text-dark/80 hover:text-dark'
+                          : 'hover:bg-white/20 dark:hover:bg-slate-700/50 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100'
                       }`}
                     >
                       <Icon size={20} className="flex-shrink-0" />
@@ -140,20 +140,20 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
               </nav>
 
               {/* Family Overview Panel */}
-              <div className="mt-8 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg overflow-hidden">
+              <div className="mt-8 bg-gradient-to-br from-white/15 to-white/5 dark:from-slate-800/30 dark:to-slate-900/20 backdrop-blur-sm rounded-2xl border border-white/20 dark:border-slate-700/50 shadow-lg overflow-hidden">
                 {/* Header */}
-                <div className="px-5 py-4 bg-gradient-to-r from-primary/10 to-secondary/10 border-b border-white/10">
+                <div className="px-5 py-4 bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-primary/15 dark:to-secondary/15 border-b border-white/10 dark:border-slate-700/30">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-md">
                         <span className="text-white text-lg font-bold">🏠</span>
                       </div>
                       <div>
-                        <h3 className="text-base font-bold text-dark">Family Hub</h3>
-                        <p className="text-xs text-dark/60">Currently viewing all members</p>
+                        <h3 className="text-base font-bold text-dark dark:text-slate-100">Family Hub</h3>
+                        <p className="text-xs text-dark/60 dark:text-slate-400">Currently viewing all members</p>
                       </div>
                     </div>
-                    <button className="text-xs text-primary hover:text-primary/80 transition-colors font-semibold bg-primary/10 px-3 py-1.5 rounded-lg">
+                    <button className="text-xs text-primary dark:text-primary-light hover:text-primary/80 transition-colors font-semibold bg-primary/10 dark:bg-primary/20 px-3 py-1.5 rounded-lg">
                       Switch
                     </button>
                   </div>
@@ -180,41 +180,41 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onOpen, activ
                   <div className="space-y-2">
                     <h4 className="text-xs font-semibold text-dark/70 uppercase tracking-wide mb-2">Members</h4>
                     
-                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 dark:bg-slate-800/30 hover:bg-white/10 dark:hover:bg-slate-700/40 transition-colors">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">E</span>
                         </div>
-                        <span className="text-sm font-medium text-dark">Emma</span>
+                        <span className="text-sm font-medium text-dark dark:text-slate-200">Emma</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60">245 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-slate-400">245 pts</span>
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 dark:bg-slate-800/30 hover:bg-white/10 dark:hover:bg-slate-700/40 transition-colors">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">L</span>
                         </div>
-                        <span className="text-sm font-medium text-dark">Liam</span>
+                        <span className="text-sm font-medium text-dark dark:text-slate-200">Liam</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60">189 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-slate-400">189 pts</span>
                         <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5 dark:bg-slate-800/30 hover:bg-white/10 dark:hover:bg-slate-700/40 transition-colors">
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
                           <span className="text-white text-xs font-bold">S</span>
                         </div>
-                        <span className="text-sm font-medium text-dark">Sophie</span>
+                        <span className="text-sm font-medium text-dark dark:text-slate-200">Sophie</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs text-dark/60">312 pts</span>
+                        <span className="text-xs text-dark/60 dark:text-slate-400">312 pts</span>
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                       </div>
                     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, User, LogOut, Settings, ChevronDown } from 'lucide-react';
+import { Menu, X, User, LogOut, Settings, ChevronDown, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 
 interface HeaderProps {
   onMenuToggle?: () => void;
@@ -23,11 +24,12 @@ export const Header: React.FC<HeaderProps> = ({
   onChildChange = () => {} 
 }) => {
   const { user, signOut } = useAuth();
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isChildMenuOpen, setIsChildMenuOpen] = useState(false);
 
   return (
-    <header className="glassmorphism sticky top-0 z-50 px-4 py-3 border-b border-white/20">
+    <header className="glassmorphism dark:bg-slate-900/80 dark:backdrop-blur-xl sticky top-0 z-50 px-4 py-3 border-b border-white/20 dark:border-slate-700/50 transition-colors duration-300">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo and Menu Toggle */}
         <div className="flex items-center space-x-4">
@@ -43,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">B</span>
             </div>
-            <h1 className="text-xl font-bold text-dark">BinkyBoard</h1>
+            <h1 className="text-xl font-bold text-dark dark:text-slate-100">BinkyBoard</h1>
           </div>
         </div>
 
@@ -62,14 +64,14 @@ export const Header: React.FC<HeaderProps> = ({
                 {children.find(c => c.id === activeChild)?.emoji}
               </span>
             </div>
-            <span className="text-dark font-medium">
+            <span className="text-dark dark:text-slate-100 font-medium">
               {children.find(c => c.id === activeChild)?.name}
             </span>
-            <ChevronDown size={16} className="text-dark/60" />
+            <ChevronDown size={16} className="text-dark/60 dark:text-slate-400" />
           </button>
 
           {isChildMenuOpen && (
-            <div className="absolute top-full mt-2 left-0 w-64 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/20 py-2 z-[9999]">
+            <div className="absolute top-full mt-2 left-0 w-64 bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/20 dark:border-slate-700/50 py-2 z-[9999]">
               {children.map((child) => (
                 <button
                   key={child.id}
@@ -89,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
                     <span className="text-white text-sm font-bold">{child.emoji}</span>
                   </div>
                   <div className="flex-1">
-                    <span className="text-dark font-medium block">{child.name}</span>
+                    <span className="text-dark dark:text-slate-200 font-medium block">{child.name}</span>
                     {child.id !== 'family' && (
                       <span className="text-dark/60 text-xs">
                         {child.id === 'emma' ? '3 pending • 245 pts' : 
@@ -151,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
                       <span className="text-white text-sm font-bold">{child.emoji}</span>
                     </div>
                     <div className="flex-1">
-                      <span className="text-dark font-medium block">{child.name}</span>
+                      <span className="text-dark dark:text-slate-200 font-medium block">{child.name}</span>
                       {child.id !== 'family' && (
                         <span className="text-dark/60 text-xs">
                           {child.id === 'emma' ? '3 pending • 245 pts' : 
@@ -172,6 +174,15 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             )}
           </div>
+
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-lg hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 text-dark/80 dark:text-slate-300 hover:text-dark dark:hover:text-slate-100"
+            title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
 
           {/* User Menu */}
           {user && (
